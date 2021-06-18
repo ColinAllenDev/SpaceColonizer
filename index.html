@@ -4,16 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="#">
         <title>Tree JS</title>
         <style>
-            body { margin: 0; height: 100%; }
+            body { background-color: rgb(88, 88, 88); margin: 0; height: 100%; }
             canvas { width: 100%; height: 100%; display: block; }
         </style>       
     </head>
     <body>
         <canvas id="c"></canvas>
-
-        <script src="lib/three.js"></script>        
+        <!-- Libraries -->
+        <script src="lib/three.js"></script>
+        <!-- Primitives -->
+        <script src="src/primitives/Branch.js"></script>
+        <!-- Main Imports -->
+        <script src="src/Util.js"></script>        
         <script src="src/Node.js"></script>
         <script src="src/Attractor.js"></script>
         <script src="src/Network.js"></script>
