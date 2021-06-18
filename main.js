@@ -15,16 +15,23 @@ class Main {
         // Set renderer size (set to false if we wanna scale with the window)
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
 
+        scene.getWorldScale()
+
         // Position Camera
         camera.position.set(0, 0, 10);
 
-        // Create Network
-        var network = new Network();
-        network.Start();
+        // Create Tree
+        var tree = new Tree();
+        tree.Start();
     }
 
     // The render 'loop'
-    static Render() {
+    static Render(time) {
+        // Time in seconds
+        time *= 0.001;
+
+        
+
         // Render Scene
         renderer.render(scene, camera);
     }
@@ -35,6 +42,7 @@ class Main {
         camera.updateProjectionMatrix();
 
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+        
         Main.Render();
     }
 

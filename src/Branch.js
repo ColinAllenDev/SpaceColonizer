@@ -1,17 +1,18 @@
-/* A single point in a branch 
- * <position> the nodes position in space
- * <influencedBy> list of attractors influencing the node
- * <parent> the parent node
- * <isTip> is this the tip of the node branch?
+/* A branch with a parent (unless root), position and direction
+ * <parent> the parent branch
+ * <position> the branches' position in space
+ * <direction> the branches' direction vector
+ * <influencedBy> list of leaves influencing the branch
 */
-class Node {
+class Branch {
     constructor(parent, position, direction) {
-        // Member Variables
         this.parent = parent;
         this.position = position;
         this.direction = direction;
-        
+        this.originalDirection = direction.clone();
+
         this.influencedBy = [];
+        this.leafCount = 0; // may remove this
     }
 
     Draw() {
@@ -27,6 +28,11 @@ class Node {
 
             scene.add(object);
         } 
+    }
+
+    Reset() {
+        this.direction = this.originalDirection.clone();
+        this.leafCount = 0;
     }
 
 }
